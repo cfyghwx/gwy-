@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- index title start-->
+  <view class="page_title">
+    <!-- <navigator url="city-list/city-list?city={{cityName}}" redirect>
+        <view class="loc_btn">{{cityName}}<image class="loc_more_img" src="../../images/icon_arrow_down_white.png"/></view>
+    </navigator> -->
+    <!-- <image class="page_title" src="../../images/1.jpg"></image> -->
+    <image class="page_title" src="{{img_url}}"></image>
+    <!-- <view class="search_btn"><image class="seach_img" src="../../images/icon_search.png"/>搜索景点</view> -->
+    <!-- <view class="msg_btn"><image class="msg_img" src="../../images/1.jpg"/></view> -->
+  </view>
+  <!-- index title end-->
+  <!-- index hot module start-->
+  <div class="page_hot">
+    <!-- <view class="hot_title">
+      <text>热门景点</text>
+      <text>更多景点>></text>
+    </view> -->
+    <view class='title'>
+      <!-- <text >栖霞山</text> -->
+      <text>{{scenery}}</text>
+    </view>
+    <view class='content'>
+      <text>{{description}}</text>
+    </view>
+  </div>
+
+  <button bindtap="click">查看计划</button>
+
+</view>
