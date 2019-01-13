@@ -1,0 +1,11 @@
+<!--homePage.wxml-->
+<view class="container">
+
+  <!-- 热门景点 -->
+  <view class="hotList">
+    <navigator  wx:for="{{navList}}" wx:key="{{index}}" url="{{item.page}}" class="nav_item">
+      <image src="../../images/{{item.icon}}" />
+    </navigator>
+  </view>
+
+</view>

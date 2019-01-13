@@ -1,0 +1,39 @@
+/* miniprogram/pages/addPlan/addPlan.wxss */
+.section{
+  margin-top: 20rpx;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+.section .tag{
+  width: 200rpx;
+  margin-left: 40rpx;
+}
+.section .arrow{
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  left: 40px;
+  transform: rotate(225deg);
+}
+
+.planMes{
+  margin-top: 30rpx;
+  width: 100%;
+  height: 400rpx;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.planMes textarea{
+  width: 90%;
+  height: 400rpx;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-left: 40rpx;
+}

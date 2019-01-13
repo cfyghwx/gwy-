@@ -1,0 +1,49 @@
+<!--miniprogram/pages/addPlan/addPlan.wxml-->
+<view class="container">
+
+  <!-- 当前景点 -->
+  <view class="hotList">
+    <text>{{sceneryname}}</text>
+  </view>
+
+  <!-- 出发地点选择 -->
+  <view class="section" > 
+    <text>出发地点</text> 
+    <picker bindchange="bindRegionChange" value="{{region}}"  mode = "region">  
+      <view class="picker">  
+        {{region[0]}}，{{region[1]}}，{{region[2]}}  
+      </view>
+       
+    </picker>  
+  </view>  
+
+  <!-- 出发日期选择 -->
+  <view class="section">  
+    <text class='tag'>出发日期</text>
+    <picker mode="multiSelector" bindchange="dateChange" bindcolumnchange="dateColumnChange" value="{{dateIndex}}" range="{{dateArray}}"> 
+      <view class="picker"> 
+        {{year}}-{{month}}-{{day}}
+      </view>  
+    </picker>  
+    <view class='arrow'></view> 
+  </view>  
+
+  <!-- 出发时间选择 -->
+  <view class="section">  
+    <text>出发时间</text>
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">  
+      <view class="picker">  
+       {{time}}
+      </view>  
+    </picker>  
+  </view> 
+
+  <!-- 备注信息 -->
+  <view class='planMes'>
+    <textarea bindinput='bindTextAreaInput'>
+    </textarea>
+  </view>
+  <button size="mini" type="default" bindtap="onCreatePlan">创建</button>
+
+</view>
+

@@ -1,0 +1,17 @@
+/* miniprogram/pages/homePage/homePage.wxss */
+
+.hotList {
+  width: 100%;
+  display: flex; }
+  .hotList .nav_item {
+    margin-top: 40rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .hotList .nav_item image {
+      width: 100%;
+      height: 250rpx; }
+    .hotList .nav_item text {
+      font-size: 30rpx; }
