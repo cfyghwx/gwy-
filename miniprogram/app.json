@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/homePage/homePage",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -7,13 +8,38 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/scenery/scenery"
+    "pages/addPlan/addPlan",
+    "pages/scenery/scenery",
+    "pages/userPage/userPage",
+    "pages/planList/planList",
+    "pages/showPlan/showPlan"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "跟我游",
+    "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+    "color": "#797979",
+    "selectedColor": "#3fc3f1",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/homePage/homePage",
+        "text": "首页",
+        "iconPath": "images/btn_home.png",
+        "selectedIconPath": "images/btn_home_selector.png"
+      },
+      {
+        "pagePath": "pages/userPage/userPage",
+        "text": "我的",
+        "iconPath": "images/btn_personal.png",
+        "selectedIconPath": "images/btn_personal_selector.png"
+      }
+    ]
+  },
+  "cloud": true
 }

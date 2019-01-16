@@ -21,11 +21,19 @@
       <!-- <text >栖霞山</text> -->
       <text>{{scenery}}</text>
     </view>
-    <view class='content'>
-      <text>{{description}}</text>
+    <view class='functionTab'>
+      <button bindtap="onChangeState">景点详情</button>
+    </view>
+    <view class="'viewHide'{{showView?'viewHide':'viewShow'}}">
+      <text class='content'>{{description}}</text>
     </view>
   </div>
-
-  <button bindtap="click">查看计划</button>
+  <view class='functionTab'>
+    <button bindtap="planList">计划列表</button>
+  </view>
+  <view class='functionTab'>
+    <button bindtap="addPlan">创建计划</button>
+  </view>
+  
 
 </view>

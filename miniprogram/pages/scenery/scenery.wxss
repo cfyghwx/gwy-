@@ -53,6 +53,13 @@
   text-align: left;
 }
 
+.page_hot .viewHide{
+  display: none;
+}
+.page_hot .viewShow{
+  display: block;
+}
+
 .page_hot .content{
  box-sizing: border-box;
   width: 100%;
@@ -123,3 +130,23 @@
       height: 120rpx; }
     .sub_nav .nav_item text {
       font-size: 30rpx; }
+
+.functionTab{
+  margin-top: 20rpx;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+.functionTab button{
+  height: 100rpx;
+  width: 80%;
+  background: #fff;
+  border: none;
+}

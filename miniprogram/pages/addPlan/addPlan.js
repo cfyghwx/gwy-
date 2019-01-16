@@ -89,6 +89,7 @@ Page({
         dayDatas.push(i + 1 + "日")
       }
     }
+    console.log(dayDatas)
     return dayDatas;
   },
   /**
@@ -234,12 +235,16 @@ Page({
     db.collection('Cplan').add({
       data: {
         sceneryid:that.data.sceneryid,
+        sceneryname:that.data.sceneryname,
         region: that.data.region,
         year: that.data.year,
         month: that.data.month,
         day: that.data.day,
         time: that.data.time,
-        planMessage: that.data.planMessage
+        planMessage: that.data.planMessage,
+        applyidList:[],
+        joinidList:[],
+        status:'0'
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
@@ -275,15 +280,19 @@ Page({
   onReleasePlan: function () {
     var that = this;
     const db = wx.cloud.database()
-    db.collection('Rplan').add({
+    db.collection('Cplan').add({
       data: {
         sceneryid: that.data.sceneryid,
+        sceneryname: that.data.sceneryname,
         region: that.data.region,
         year: that.data.year,
         month: that.data.month,
         day: that.data.day,
         time: that.data.time,
-        planMessage: that.data.planMessage
+        planMessage: that.data.planMessage,
+        applyidList: [],
+        joinidList: [],
+        status: '1'
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
@@ -306,36 +315,6 @@ Page({
         wx.showToast({
           icon: 'none',
           title: '计划发布失败'
-        })
-        console.error('[数据库] [新增记录] 失败：', err)
-      }
-    })
-  },
-
-  /**
- * 旅游计划发布函数——监听旅游计划发布
- */
-  onReleasePlan: function () {
-    const db = wx.cloud.database()
-    db.collection('counters').add({
-      data: {
-        count: 1
-      },
-      success: res => {
-        // 在返回结果中会包含新创建的记录的 _id
-        this.setData({
-          counterId: res._id,
-          count: 1
-        })
-        wx.showToast({
-          title: '新增记录成功',
-        })
-        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '新增记录失败'
         })
         console.error('[数据库] [新增记录] 失败：', err)
       }

@@ -2,7 +2,7 @@
 <view class="container">
 
   <!-- 当前景点 -->
-  <view class="hotList">
+  <view class="sceneryTag">
     <text>{{sceneryname}}</text>
   </view>
 
@@ -44,6 +44,7 @@
     </textarea>
   </view>
   <button size="mini" type="default" bindtap="onCreatePlan">创建</button>
+  <button size="mini" type="default" bindtap="onReleasePlan">发布</button>
 
 </view>
 

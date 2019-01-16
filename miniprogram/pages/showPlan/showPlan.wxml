@@ -1,0 +1,26 @@
+<!--miniprogram/pages/showPlan/showPlan.wxml-->
+<view class="container">
+
+  <!-- 当前景点 -->
+  <view class="sceneryTag">
+    <text>当前景点：{{plan.sceneryname}}</text>
+  </view>
+
+  <!-- 出发地点选择 -->
+  <view> 
+    <text>出发地点：{{plan.region[0]}}，{{plan.region[1]}}，{{plan.region[2]}}
+      </text>
+      <text>出发日期：{{plan.year}}-{{plan.month}}-{{plan.day}}
+      </text>
+      <text>出发时间：{{plan.time}}
+      </text>
+      <text>备注信息：{{plan.planMessage}}
+      </text>
+      <text>发起人：{{plan._openid}}
+      </text>
+  </view>  
+  <view wx:if="{{userid != plan._openid}}">
+      <button bindtap="joinPlan">加入计划</button>
+  </view>
+
+</view>

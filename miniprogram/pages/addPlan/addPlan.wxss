@@ -1,4 +1,7 @@
 /* miniprogram/pages/addPlan/addPlan.wxss */
+.sceneryTag{
+  margin-top: 20rpx;
+}
 .section{
   margin-top: 20rpx;
   height: 100rpx;

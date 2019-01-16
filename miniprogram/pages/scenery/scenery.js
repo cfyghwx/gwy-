@@ -7,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showView:true,
     openid: "",
-    scenery_id:"",
+    sceneryid:"",
     img_url:"",
     scenery:"",
     description:""
@@ -18,7 +19,7 @@ Page({
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
     db.collection('scenery').where({
-      sceneryid: this.data.scenery_id
+      _id: this.data.sceneryid
     }).get({
       success: res => {
 
@@ -42,17 +43,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.openid) {
-      this.setData({
-        openid: app.globalData.openid
-      })
-    }
-    // this.data.scenery_id = options
-    this.data.scenery_id =1
-    // this.data.scenery_id=''
+    // if (app.globalData.openid) {
+    //   this.setData({
+    //     openid: app.globalData.openid
+    //   })
+    // }
+    var that = this;
+    console.log(options);
+    showView:(options.showView=="true"?true:false)
+    that.setData({
+      sceneryid: options.sceneryid
+    })
+    that.onQuery()
+    console.log('111',that.data)
+  },
 
-    this.onQuery()
-    console.log('111',this.data)
+  onChangeState: function(){
+    var that = this;
+    that.setData({
+      showView:(!that.data.showView)
+    })
+    console.log(that.data.showView)
   },
 
   /**
@@ -103,10 +114,24 @@ Page({
   onShareAppMessage: function () {
 
   },
-  click:function(){
+  planList:function(){
     wx.navigateTo({
-      url: '../index/index?id='+this.data.scenery_id,
+      url: '../planList/planList?sceneryid=' + this.data.sceneryid,
     })
+  },
+  addPlan:function(){
+    if (app.globalData.openid) {
+      wx.navigateTo({
+        url: '../addPlan/addPlan?sceneryid='+this.data.sceneryid,
+      })
+    }
+    else{
+      wx.showToast({
+        title: '尚未登录',
+        icon:'loading',
+        duration:500,
+      })
+    }
   }
 
 })
