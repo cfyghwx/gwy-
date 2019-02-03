@@ -17,12 +17,10 @@ Page({
 
   onQuery: function () {
     const db = wx.cloud.database()
-    // 查询当前用户所有的 counters
     db.collection('scenery').where({
       _id: this.data.sceneryid
     }).get({
       success: res => {
-
         this.setData({
           img_url:res.data[0].img,
           scenery:res.data[0].sceneryname,
@@ -43,11 +41,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (app.globalData.openid) {
-    //   this.setData({
-    //     openid: app.globalData.openid
-    //   })
-    // }
     var that = this;
     console.log(options);
     showView:(options.showView=="true"?true:false)
@@ -55,7 +48,6 @@ Page({
       sceneryid: options.sceneryid
     })
     that.onQuery()
-    console.log('111',that.data)
   },
 
   onChangeState: function(){

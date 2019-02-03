@@ -7,8 +7,8 @@
     </navigator> -->
     <!-- <image class="page_title" src="../../images/1.jpg"></image> -->
     <image class="page_title" src="{{img_url}}"></image>
-    <!-- <view class="search_btn"><image class="seach_img" src="../../images/icon_search.png"/>搜索景点</view> -->
-    <!-- <view class="msg_btn"><image class="msg_img" src="../../images/1.jpg"/></view> -->
+    <!--<view class="search_btn"><image class="seach_img" src="../../images/icon_search.png"/>搜索景点</view> 
+     <view class="msg_btn"><image class="msg_img" src="../../images/1.jpg"/></view>-->
   </view>
   <!-- index title end-->
   <!-- index hot module start-->
@@ -19,21 +19,19 @@
     </view> -->
     <view class='title'>
       <!-- <text >栖霞山</text> -->
-      <text>{{scenery}}</text>
+      <text style="margin-top:80rpx;">{{scenery}}</text>
     </view>
-    <view class='functionTab'>
-      <button bindtap="onChangeState">景点详情</button>
+    <view class='functionTab' style="margin-top:100rpx">
+      <button bindtap="onChangeState" style="width:100%">景点详情</button>
     </view>
     <view class="'viewHide'{{showView?'viewHide':'viewShow'}}">
       <text class='content'>{{description}}</text>
     </view>
   </div>
-  <view class='functionTab'>
+  <view class='functionTab' style="margin-top:40rpx">
     <button bindtap="planList">计划列表</button>
   </view>
-  <view class='functionTab'>
+  <view class='functionTab'  style="margin-top:40rpx">
     <button bindtap="addPlan">创建计划</button>
   </view>
-  
-
 </view>

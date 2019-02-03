@@ -1,40 +1,19 @@
 // miniprogram/pages/userPage/userPage.js
 const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userInfo: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    that.setData({
+      userInfo: app.globalData.userInfo
+    });
 
-  },
-
-  onGetOpenid: function () {
-    // 调用云函数
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
-        })
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
-        })
-      }
-    })
   },
 
   /**

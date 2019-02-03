@@ -1,0 +1,36 @@
+<!--miniprogram/pages/userPlan/userPlan.wxml-->
+<view class="container">
+
+  <view>
+    <text>我创建的计划</text>
+  </view>
+  <!-- 创建计划列表 -->
+  <view class="planList" wx:for="{{Cplan}}" wx:key="{{index}}">
+    <navigator url="../showPlan/showPlan?planid={{item._id}}&tag=1">
+      <text>目的景点：{{item.sceneryname}}
+      </text>
+      <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
+      </text>
+      <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+      </text>
+    </navigator>
+  </view>
+
+  <view>
+    <text>我发布的计划</text>
+  </view>
+  <!-- 发布计划列表 -->
+  <view class="planList" wx:for="{{Rplan}}" wx:key="{{index}}">
+    <navigator url="../showPlan/showPlan?planid={{item._id}}&tag=2">
+      <text>目的景点：{{item.sceneryname}}
+      </text>
+      <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
+      </text>
+      <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+      </text>
+    </navigator>
+  </view>
+</view>
+
+  
+

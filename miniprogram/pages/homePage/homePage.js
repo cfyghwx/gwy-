@@ -5,13 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sceneryid:'',
     navList: [
       {
         name: "栖霞山",
-        icon: "qixia.jpg",
+        icon: "qixiashan.jpg",
         page: "../scenery/scenery?sceneryid=XDKvQsDR1TiNYQGI"
+      },
+      {
+        name: "鸡鸣寺",
+        icon: "jimingsi.jpg",
+        page: "../scenery/scenery?sceneryid=XD7Ls-SiwXKAQn0g"
+      },
+      {
+        name: "秦淮河",
+        icon: "qinhuaihe.jpg",
+        page: "../scenery/scenery?sceneryid=XD7MhHkPDdDCJ3ax"
+      },
+      {
+        name: "紫金山",
+        icon: "zijinshan.jpg",
+        page: "../scenery/scenery?sceneryid=XD7NmonnuWjcivVd"
       }
     ]
+  },
+
+  search:function(e){
+    let sceneryname = e.detail.value
+    const db = wx.cloud.database()
+    console.log(sceneryname)
+    db.collection('scenery').where({
+      sceneryname:sceneryname
+    }).get({
+      success: res => {
+        console.log(res)
+        this.setData({
+          sceneryid: res.data[0]._id
+        })
+        console.log('[数据库] [查询记录] 成功: ', res.data)
+        wx.navigateTo({
+          url: '../scenery/scenery?sceneryid='+this.data.sceneryid,
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '搜索失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
   },
 
   /**

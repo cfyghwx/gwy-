@@ -1,1 +1,42 @@
 /* miniprogram/pages/userPage/userPage.wxss */
+page{
+  background: floralwhite;
+}
+.g-bda-userinfo {
+  padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  margin-bottom: 2rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.i-header{
+  height: 350rpx;
+   background-color: #f3f3f3;   
+   text-align: center;
+}
+.userinfo-nickname{
+  color: black;
+}
+.userinfo-country{
+  color: black;
+  font-size: 28rpx
+}
+.block{
+  background: #fff;
+  margin-top: 25rpx; 
+  border: 0.5rpx solid rgba(0, 0, 0, 0.1);
+}
+.block-title{
+  position: relative;
+  font-size: 34rpx;
+  line-height: 1.5;
+  padding:10rpx 20rpx;
+}

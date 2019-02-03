@@ -2,9 +2,6 @@
   "pages": [
     "pages/homePage/homePage",
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
@@ -12,7 +9,11 @@
     "pages/scenery/scenery",
     "pages/userPage/userPage",
     "pages/planList/planList",
-    "pages/showPlan/showPlan"
+    "pages/showPlan/showPlan",
+    "pages/userPlan/userPlan",
+    "pages/relatedPlan/relatedPlan",
+    "pages/userMes/userMes",
+    "pages/showMes/showMes"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,0 +1,37 @@
+<!--miniprogram/pages/relatedPlan/relatedPlan.wxml-->
+<view class="container">
+
+  <view>
+    <text>我申请的计划</text>
+  </view>
+  <!-- 申请计划列表 -->
+  <view class="planList" wx:for="{{Aplan}}" wx:key="{{index}}">
+    <navigator url="../showPlan/showPlan?planid={{item._id}}&tag=3">
+      <text>目的景点：{{item.sceneryname}}
+      </text>
+      <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
+      </text>
+      <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+      </text>
+    </navigator>
+  </view>
+
+  <view>
+    <text>我加入的计划</text>
+  </view>
+  <!-- 加入计划列表 -->
+  <view class="planList" wx:for="{{Jplan}}" wx:key="{{index}}">
+    <navigator url="../showPlan/showPlan?planid={{item._id}}&tag=4">
+      <text>目的景点：{{item.sceneryname}}
+      </text>
+      <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
+      </text>
+      <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+      </text>
+    </navigator>
+  </view>
+</view>
+
+  
+
+

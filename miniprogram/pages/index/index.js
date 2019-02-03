@@ -10,9 +10,7 @@ Page({
     requestResult: ''
   },
 
-  onLoad: function(options) {
-    var i= options.id
-    console.log('1',i)
+  onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

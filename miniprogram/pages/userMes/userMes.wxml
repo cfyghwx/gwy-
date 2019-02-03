@@ -1,0 +1,21 @@
+<!--miniprogram/pages/userMes/userMes.wxml-->
+<view class="container">
+
+  <view>
+    <text>申请消息列表</text>
+  </view>
+  <!-- 消息列表 -->
+  <view class="mesList" wx:for="{{mesList}}" wx:key="{{index}}">
+    <navigator url="../showMes/showMes?planid={{item.planid}}&mesid={{item._id}}">
+      <text>目的景点：{{item.sceneryname}}
+      </text>
+      <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+      </text>
+      <text>申请人：{{item.applyid}}
+      </text>
+    </navigator>
+  </view>
+  
+</view>
+
+  

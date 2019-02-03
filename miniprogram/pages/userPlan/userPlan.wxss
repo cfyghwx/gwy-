@@ -1,0 +1,16 @@
+/* miniprogram/pages/userPlan/userPlan.wxss */
+.planList {
+  margin-top: 20rpx;
+  height: 150rpx;
+  width: 100%;
+  background: floralwhite;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease; }
+  .planList text {
+    margin-left: 40rpx;
+    font-size: 30rpx; }

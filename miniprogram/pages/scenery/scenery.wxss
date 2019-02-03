@@ -1,11 +1,11 @@
 /* pages/scenery/scenery.wxss */
 /**index.wxss**/
 .page_title {
-  width: 100%;
+  width: 98%;
   height: 300rpx;
   display: flex;
-  /* background: url(https://raw.githubusercontent.com/liuhuiIris/travelListen/master/images/bg_top.png); */
-  /* background: url(../../images/1.jpg); */
+  /*background: url(https://raw.githubusercontent.com/liuhuiIris/travelListen/master/images/bg_top.png);
+   background: url(../../images/1.jpg); */
   
   background-size: 100% 100%;
   padding-top: 22rpx; }
@@ -58,10 +58,11 @@
 }
 .page_hot .viewShow{
   display: block;
+  background-color: floralwhite;
 }
 
 .page_hot .content{
- box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 10rpx;
   display: flex;
@@ -132,9 +133,9 @@
       font-size: 30rpx; }
 
 .functionTab{
-  margin-top: 20rpx;
+  margin-top: 30rpx;
   height: 100rpx;
-  width: 100%;
+ /* width: 100%;*/
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
@@ -145,8 +146,7 @@
   transition: all 300ms ease;
 }
 .functionTab button{
-  height: 100rpx;
-  width: 80%;
+ /* width: 100%;*/
   background: #fff;
   border: none;
 }

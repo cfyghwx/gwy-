@@ -1,0 +1,26 @@
+<!--miniprogram/pages/showMes/showMes.wxml-->
+<view class="container">
+
+  <!-- 消息详情 -->
+  <text>计划详情</text>
+  <view style="background:floralwhite;margin-top:20rpx"> 
+    <text>目的景点：{{plan.sceneryname}}
+    </text>
+    <text>出发地点：{{plan.region[0]}}，{{plan.region[1]}}，{{plan.region[2]}}
+    </text>
+    <text>出发日期：{{plan.year}}-{{plan.month}}-{{plan.day}}
+    </text>
+    <text>出发时间：{{plan.time}}
+    </text>
+    <text>备注信息：{{plan.planMessage}}
+    </text>
+    <text>申请人：{{message.applyid}}
+    </text>
+    <text>申请时间：{{message.applytime}}
+    </text>
+  </view>  
+  <view style="margin-top:40rpx">
+      <button size='mini' bindtap="accept"style="margin-right:20rpx;">通过</button>
+      <button size='mini' bindtap="refuse" style="magrin-left:20rpx">拒绝</button>
+  </view>
+</view>

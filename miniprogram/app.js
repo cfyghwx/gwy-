@@ -1,9 +1,37 @@
 //app.js
-// AppSecret:4599dd95b08311aaf8a746b14f707ed6
-// access_token:{"access_token":"17_aILiR_lGdBRxr5pFFPZyyoyDrHhjwMW6lLJCBRG1VwhscJXVeWB5rWeqoaJqJGTFSDRV9eGApoX4WXwazoxyzUSYB65MFmDl1JlVXq9dm2trvZsximnNX9qyxyXhc42upFaOQ4-N3jWaAZGZFAMcAEABWI","expires_in":7200}
 App({
   onLaunch: function () {
+
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+
+    //登录
+    wx.login({
+      success:res => {
+        
+      }
+    })
     
+    //获取用户信息
+    wx.getSetting({
+      success:res => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: res => {
+              this.globalData.userInfo = res.userInfo
+              if(this.userInfoReadyCallback){
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }else{
+          wx.reLaunch({
+            url: '/pages/authorize/authorize',
+          })
+        }
+      }
+    })
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -12,7 +40,22 @@ App({
       })
     }
 
-    this.globalData = {}
-    this.globalData.openid = ""
+    // 调用login云函数获取用户openid
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        this.globalData.openid = res.result.openid
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+
+  },
+  globalData: {
+    userInfo: null,
+    openid: ''
   }
 })

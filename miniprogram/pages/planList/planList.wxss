@@ -6,7 +6,8 @@
   margin-top: 20rpx;
   height: 150rpx;
   width: 100%;
-  background: #fff;
+  /*background: #fff;*/
+  background-color: floralwhite;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
   border-right: none;

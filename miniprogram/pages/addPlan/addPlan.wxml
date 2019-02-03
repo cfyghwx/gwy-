@@ -3,14 +3,14 @@
 
   <!-- 当前景点 -->
   <view class="sceneryTag">
-    <text>{{sceneryname}}</text>
+    <text style="font-size:40rpx;">{{sceneryname}}</text>
   </view>
 
   <!-- 出发地点选择 -->
   <view class="section" > 
-    <text>出发地点</text> 
+    <text class='tag'>出发地点</text> 
     <picker bindchange="bindRegionChange" value="{{region}}"  mode = "region">  
-      <view class="picker">  
+      <view class="picker" style="margin-left:20rpx;">  
         {{region[0]}}，{{region[1]}}，{{region[2]}}  
       </view>
        
@@ -25,14 +25,14 @@
         {{year}}-{{month}}-{{day}}
       </view>  
     </picker>  
-    <view class='arrow'></view> 
+    <!-- <view class='arrow'></view>  -->
   </view>  
 
   <!-- 出发时间选择 -->
   <view class="section">  
-    <text>出发时间</text>
+    <text class='tag'>出发时间</text>
     <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">  
-      <view class="picker">  
+      <view class="picker" style="margin-left:20rpx;">  
        {{time}}
       </view>  
     </picker>  
@@ -40,11 +40,13 @@
 
   <!-- 备注信息 -->
   <view class='planMes'>
+   <text style="text-align:center;">详细内容</text>
     <textarea bindinput='bindTextAreaInput'>
     </textarea>
   </view>
-  <button size="mini" type="default" bindtap="onCreatePlan">创建</button>
-  <button size="mini" type="default" bindtap="onReleasePlan">发布</button>
-
+  <view style="height:300rpx;width:500rpx;margin-top:100rpx;margin-left:100rpx">
+    <button size="mini" bindtap="onCreatePlan" style="margin-left:45rpx;">创建</button>
+  <button size="mini" bindtap="onReleasePlan"       style="margin-left:15rpx;">发布</button>
+  </view>
 </view>
 

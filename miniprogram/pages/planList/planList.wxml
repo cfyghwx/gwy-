@@ -9,7 +9,7 @@
 
   <!-- 计划列表 -->
   <view class="planList" wx:for="{{planList}}" wx:key="{{index}}">
-    <navigator url="../showPlan/showPlan?planid={{item._id}}">
+    <navigator url="../showPlan/showPlan?planid={{item._id}}&tag={{tag}}">
       <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
       </text>
       <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}

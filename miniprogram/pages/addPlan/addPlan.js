@@ -103,7 +103,9 @@ Page({
     })
     const db = wx.cloud.database()
     // 查询当前用户所有的 counters
-    db.collection('scenery').get({
+    db.collection('scenery').where({
+      _id: this.data.sceneryid
+    }).get({
       success: res => {
         console.log(res);
         that.setData({

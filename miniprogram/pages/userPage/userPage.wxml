@@ -1,10 +1,38 @@
 <!--miniprogram/pages/userPage/userPage.wxml-->
-<view class="container">
-
-  <!-- 用户 openid -->
-  <view class="userinfo">
-    <view>
-      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+<view class="page">
+    <view class="page__hd i-header">
+        <view class="g-bd">
+            <view></view>
+            <view class="g-bda">
+                <view bindtap="" class="g-bda-userinfo">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                    <text class="userinfo-country" decode="{{true}}">{{userInfo.country}}&nbsp;&nbsp;{{userInfo.city}}</text>
+                </view>
+            </view>
+        </view>
     </view>
-  </view>
+
+    <view class='block'>
+      <navigator url="../userPlan/userPlan">
+      <text>我的计划
+      </text>
+    </navigator>
+    </view>
+
+    <view class='block'>
+      <navigator url="../relatedPlan/relatedPlan">
+      <text>相关计划
+      </text>
+    </navigator>
+    </view>
+
+    <view class='block'>
+      <navigator url="../userMes/userMes">
+      <text>我的消息
+      </text>
+    </navigator>
+    </view>
+
 </view>
+

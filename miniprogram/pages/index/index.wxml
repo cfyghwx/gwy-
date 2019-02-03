@@ -40,10 +40,7 @@
     </navigator>
   </view>
 
-    <!-- 景点信息 -->
-  <view class="uploader">
-    <navigator url="../scenery/scenery" open-type="navigate" class="uploader-text">
-      <text>景点详细信息</text>
-    </navigator>
-  </view>
+  <navigator url="../homePage/homePage" open-type="navigate">
+      <text>shouye</text>
+  </navigator>
 </view>

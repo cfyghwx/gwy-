@@ -2,25 +2,32 @@
 <view class="container">
 
   <!-- 当前景点 -->
-  <view class="sceneryTag">
+  <view class="sceneryTag" style="margin-top:20rpx;">
     <text>当前景点：{{plan.sceneryname}}</text>
   </view>
 
   <!-- 出发地点选择 -->
-  <view> 
-    <text>出发地点：{{plan.region[0]}}，{{plan.region[1]}}，{{plan.region[2]}}
+  <view style="background-color:floralwhite;margin-top:30rpx;"> 
+    <text style="margin-top:20rpx;">出发地点：{{plan.region[0]}}，{{plan.region[1]}}，{{plan.region[2]}}
       </text>
-      <text>出发日期：{{plan.year}}-{{plan.month}}-{{plan.day}}
+      <text style="margin-top:50rpx;">出发日期：{{plan.year}}-{{plan.month}}-{{plan.day}}
       </text>
-      <text>出发时间：{{plan.time}}
+      <text style="margin-top:50rpx;">出发时间：{{plan.time}}
       </text>
-      <text>备注信息：{{plan.planMessage}}
+      <text style="margin-top:50rpx;">备注信息：{{plan.planMessage}}
       </text>
-      <text>发起人：{{plan._openid}}
+      <text style="margin-top:50rpx;">发起人：{{plan._openid}}
       </text>
   </view>  
-  <view wx:if="{{userid != plan._openid}}">
-      <button bindtap="joinPlan">加入计划</button>
+  <view wx:if="{{userid != plan._openid && tag == 0}}" style="margin-top:50rpx;">
+   <button size="mini" bindtap="joinPlan">加入计划    </button>
+
+  </view>
+  <view wx:if="{{tag == 1}}" style="margin-top:50rpx;">
+      <button size="mini" bindtap="releasePlan">发布计划</button>
+  </view>
+  <view wx:if="{{tag == 2}}" style="margin-top:50rpx;">
+      <button size="mini" bindtap="surePlan">确认计划</button>
   </view>
 
 </view>
