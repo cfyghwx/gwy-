@@ -2,8 +2,16 @@
 <view class="container">
 
   <!-- 当前景点 -->
-  <view class="sceneryTag">
-    <text style="font-size:40rpx;">{{sceneryname}}</text>
+  <view class="section">
+    <text class='tag'>景点名称</text>
+    <view wx:if="{{sceneryname}}">
+     <view class="picker" style="margin-left:20rpx;">  
+        {{sceneryname}} 
+      </view>
+    </view>
+    <view wx:else>
+      <input bindinput='scenerynameChange' value='{{sceneryname}}' placeholder='请输入景点名称' style="margin-left:20rpx;" />
+    </view>
   </view>
 
   <!-- 出发地点选择 -->
@@ -21,7 +29,7 @@
   <view class="section">  
     <text class='tag'>出发日期</text>
     <picker mode="multiSelector" bindchange="dateChange" bindcolumnchange="dateColumnChange" value="{{dateIndex}}" range="{{dateArray}}"> 
-      <view class="picker"> 
+      <view class="picker" style="margin-left:20rpx;"> 
         {{year}}-{{month}}-{{day}}
       </view>  
     </picker>  
@@ -40,13 +48,13 @@
 
   <!-- 备注信息 -->
   <view class='planMes'>
-   <text style="text-align:center;">详细内容</text>
+   <text style="text-align:center;">计划内容:</text>
     <textarea bindinput='bindTextAreaInput'>
     </textarea>
   </view>
-  <view style="height:300rpx;width:500rpx;margin-top:100rpx;margin-left:100rpx">
-    <button size="mini" bindtap="onCreatePlan" style="margin-left:45rpx;">创建</button>
-  <button size="mini" bindtap="onReleasePlan"       style="margin-left:15rpx;">发布</button>
+  <view style="height:300rpx;width:500rpx;margin-top:120rpx;margin-left:100rpx">
+    <button size="mini" bindtap="onCreatePlan" style="margin-left:20rpx;">创建</button>
+  <button size="mini" bindtap="onReleasePlan" style="margin-left:70rpx;">发布</button>
   </view>
 </view>
 

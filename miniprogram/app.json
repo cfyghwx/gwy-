@@ -1,10 +1,7 @@
 {
   "pages": [
+    "pages/start/start",
     "pages/homePage/homePage",
-    "pages/index/index",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
     "pages/addPlan/addPlan",
     "pages/scenery/scenery",
     "pages/userPage/userPage",
@@ -13,13 +10,15 @@
     "pages/userPlan/userPlan",
     "pages/relatedPlan/relatedPlan",
     "pages/userMes/userMes",
-    "pages/showMes/showMes"
+    "pages/showMes/showMes",
+    "pages/authorize/authorize",
+    "pages/findPlan/findPlan"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "跟我游",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -33,6 +32,18 @@
         "text": "首页",
         "iconPath": "images/btn_home.png",
         "selectedIconPath": "images/btn_home_selector.png"
+      },
+      {
+        "pagePath": "pages/findPlan/findPlan",
+        "text": "发现",
+        "iconPath": "images/btn_find.png",
+        "selectedIconPath": "images/btn_find_selector.png"
+      },
+      {
+        "pagePath": "pages/showMes/showMes",
+        "text": "消息",
+        "iconPath": "images/btn_mes.png",
+        "selectedIconPath": "images/btn_mes_selector.png"
       },
       {
         "pagePath": "pages/userPage/userPage",

@@ -1,25 +1,23 @@
 /* miniprogram/pages/addPlan/addPlan.wxss */
-.sceneryTag{
-  margin-top: 20rpx;
-  height:50rpx;
-}
 .section{
-  margin-top: 20rpx;
-  height: 100rpx;
+  margin-top: 0rpx;
+  height: 75rpx;
   width: 100%;
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0);
   border-left: none;
   border-right: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   transition: all 300ms ease;
-  background-color:floralwhite;
+  background-color:#fff;
+  font-size: 34rpx;
 }
 .section .tag{
   width: 200rpx;
   margin-left: 40rpx;
+  color: #999;
 }
 .section .arrow{
   width: 10px;
@@ -34,9 +32,12 @@
   margin-top: 30rpx;
   width: 90%;
   height: 400rpx;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 0px solid rgba(0, 0, 0, 0.1);
+  font-size: 34rpx;
+  color: #999;
 }
 .planMes textarea{
+  margin-top: 10px;
   width: 100%;
   height: 400rpx;
   border: 1px solid rgba(0, 0, 0, 0.1);

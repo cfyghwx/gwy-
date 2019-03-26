@@ -15,22 +15,33 @@
 
     <view class='block'>
       <navigator url="../userPlan/userPlan">
-      <text>我的计划
-      </text>
+      <image src="/images/iconfront1.png" mode="aspectFit" />
+      <text>我的发布</text>
+      <view class="arrow"></view>
     </navigator>
     </view>
 
     <view class='block'>
       <navigator url="../relatedPlan/relatedPlan">
-      <text>相关计划
-      </text>
+      <image src="/images/iconfront1.png" mode="aspectFit" />
+      <text>我的参与</text>
+      <view class="arrow"></view>
     </navigator>
     </view>
 
     <view class='block'>
       <navigator url="../userMes/userMes">
-      <text>我的消息
-      </text>
+      <image src="/images/iconfront1.png" mode="aspectFit" />
+      <text>我的消息</text>
+      <view class="arrow"></view>
+    </navigator>
+    </view>
+
+    <view class='block'>
+      <navigator url="">
+      <image src="/images/iconfront1.png" mode="aspectFit" />
+      <text>关于我们</text>
+      <view class="arrow"></view>
     </navigator>
     </view>
 

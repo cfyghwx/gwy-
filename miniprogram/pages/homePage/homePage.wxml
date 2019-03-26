@@ -1,18 +1,29 @@
 <!--homePage.wxml-->
-<view class="container">
-  <!-- 热门景点 -->
-  <view style="margin-top:10rpx;background-color:#169fe6;width:98%;height:60rpx;text-align:center;">
-  <text style="margin-top:10rpx;font-size: 40rpx;color:#fff;height:60rpx">热门景点</text>
-   </view>
-   <view style="width:100%;height:70rpx;margin-top:10rpx;">
-   <input class="search_btn" confirm-type='search' placeholder='搜索景点' bindconfirm='search' style="float:right;padding-right:20rpx"></input>
-   </view>
-  <view class="hotList" wx:for="{{navList}}" wx:key="{{index}}" style="margin-top:-70rpx;">
-    <navigator url="{{item.page}}" class="nav_item">
-    <text style="width:150rpx;margin-bottom:10rpx;">
-    {{item.name}}
-    </text> 
-      <image src="../../images/{{item.icon}}" />
-    </navigator>
+<scroll-view bindscroll="" scroll-y style="height: 100%;">
+  <view class="search">
+    <view bindtap='gotoMap' class="avatar">
+      <image src="/images/location.png"></image>
+    </view>
+    <view class="search-wrapper {{show_search_back?'search-wrapper-blue':''}}">
+      <view class="search-button" bindtap="search">
+        <input class="iconfont icon-sousuo" placeholder="搜索目的地、景点"/>
+      </view>
+    </view>
   </view>
-</view>
+  
+  <view class="activities">
+    <view class="subtitle">
+        <text>推荐景点</text>
+        <space/>
+    </view>
+
+    <view class="hotList" wx:for="{{navList}}" wx:key="{{index}}" style="margin-top:-50rpx;">
+      <navigator url="{{item.page}}" class="nav_item">
+      <text style="width:150rpx;margin-bottom:10rpx;">
+      {{item.name}}
+      </text> 
+        <image src="../../images/{{item.icon}}" />
+      </navigator>
+    </view>
+  </view>
+</scroll-view>

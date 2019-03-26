@@ -1,6 +1,6 @@
 /* miniprogram/pages/userPage/userPage.wxss */
 page{
-  background: floralwhite;
+  background: #fff;
 }
 .g-bda-userinfo {
   padding-top: 50rpx;
@@ -31,12 +31,28 @@ page{
 }
 .block{
   background: #fff;
-  margin-top: 25rpx; 
+  margin-top: 15rpx; 
   border: 0.5rpx solid rgba(0, 0, 0, 0.1);
 }
-.block-title{
-  position: relative;
-  font-size: 34rpx;
-  line-height: 1.5;
-  padding:10rpx 20rpx;
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  position: absolute;
+  right: 30rpx;
+  transform: rotate(45deg);
+  margin-top: -15px;
+}
+
+ .block image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 30rpx;
+  flex-shrink: 0;
+}
+.block text {
+  font-size: 36rpx;
+  color: #666;
 }

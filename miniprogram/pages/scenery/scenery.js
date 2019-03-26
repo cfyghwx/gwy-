@@ -7,12 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showView:true,
+    showView:false,
     openid: "",
     sceneryid:"",
     img_url:"",
     scenery:"",
-    description:""
+    description:"",
+    tag: '0',
+    sceneryname: "",
+    planList: [],
   },
 
   onQuery: function () {
@@ -25,8 +28,29 @@ Page({
           img_url:res.data[0].img,
           scenery:res.data[0].sceneryname,
           description:res.data[0].description,
+          sceneryname: res.data[0].sceneryname,
         })
         console.log('[数据库] [查询记录] 成功: ', this.data)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
+    db.collection('Cplan').where({
+      sceneryid: this.data.sceneryid,
+      status:'1'
+    }).get({
+      success: res => {
+        console.log(res);
+        this.setData({
+          planList: res.data,
+        })
+        console.log(this.data.planList)
+        console.log('[数据库] [查询记录] 成功: ', res)
       },
       fail: err => {
         wx.showToast({
@@ -113,8 +137,8 @@ Page({
   },
   addPlan:function(){
     if (app.globalData.openid) {
-      wx.navigateTo({
-        url: '../addPlan/addPlan?sceneryid='+this.data.sceneryid,
+      wx.redirectTo({
+        url: '../addPlan/addPlan?sceneryid=' + this.data.sceneryid,
       })
     }
     else{

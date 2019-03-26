@@ -16,7 +16,7 @@ Page({
               console.log(res)
               //用户已经授权过
               wx.switchTab({
-                url: '/pages/homePage/homePage'
+                url: '/pages/start/start'
               })
             }
           });
@@ -32,7 +32,7 @@ Page({
       app.globalData.userInfo = e.detail.userInfo;
 
       wx.switchTab({
-        url: '/pages/userPage/userPage'
+        url: '/pages/start/start'
       })
     } else {
       //用户按了拒绝按钮

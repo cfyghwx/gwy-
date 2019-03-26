@@ -2,14 +2,14 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"appid": "wx93749470fa3a7307",
-	"projectname": "travel_test",
+	"projectname": "travel_final",
 	"libVersion": "2.2.5",
 	"condition": {
 		"search": {
@@ -28,12 +28,67 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "homePage",
+					"pathName": "pages/homePage/homePage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scenery",
+					"pathName": "pages/scenery/scenery",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scenery",
+					"pathName": "pages/scenery/scenery",
+					"query": "sceneryid=XDKvQsDR1TiNYQGI"
+				},
+				{
+					"id": -1,
+					"name": "start",
+					"pathName": "pages/start/start",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userPage",
+					"pathName": "pages/userPage/userPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addPlan",
+					"pathName": "pages/addPlan/addPlan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addPlan2",
+					"pathName": "pages/addPlan/addPlan",
+					"query": "sceneryid=XDKvQsDR1TiNYQGI"
+				},
+				{
+					"id": -1,
+					"name": "planlist",
+					"pathName": "pages/planList/planList",
+					"query": "sceneryid=XDKvQsDR1TiNYQGI"
 				}
 			]
 		}

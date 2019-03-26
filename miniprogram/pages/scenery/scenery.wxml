@@ -2,36 +2,46 @@
 <view class="container">
   <!-- index title start-->
   <view class="page_title">
-    <!-- <navigator url="city-list/city-list?city={{cityName}}" redirect>
-        <view class="loc_btn">{{cityName}}<image class="loc_more_img" src="../../images/icon_arrow_down_white.png"/></view>
-    </navigator> -->
-    <!-- <image class="page_title" src="../../images/1.jpg"></image> -->
     <image class="page_title" src="{{img_url}}"></image>
-    <!--<view class="search_btn"><image class="seach_img" src="../../images/icon_search.png"/>搜索景点</view> 
-     <view class="msg_btn"><image class="msg_img" src="../../images/1.jpg"/></view>-->
   </view>
-  <!-- index title end-->
-  <!-- index hot module start-->
-  <div class="page_hot">
-    <!-- <view class="hot_title">
-      <text>热门景点</text>
-      <text>更多景点>></text>
-    </view> -->
-    <view class='title'>
-      <!-- <text >栖霞山</text> -->
-      <text style="margin-top:80rpx;">{{scenery}}</text>
+  <view class="subtitle">
+    <image src="/images/iconfront2.png" mode="aspectFit" />
+    <view class="demo__icon zan-badge">
+      <text class="sub_t">景点介绍</text>
+      <view bindtap="onChangeState" class="arrow"></view>
+      <view class="'viewHide'{{showView?'viewHide':'viewShow'}}">
+        <text class='content'>{{description}}</text>
+      </view>
     </view>
-    <view class='functionTab' style="margin-top:100rpx">
-      <button bindtap="onChangeState" style="width:100%">景点详情</button>
-    </view>
-    <view class="'viewHide'{{showView?'viewHide':'viewShow'}}">
-      <text class='content'>{{description}}</text>
-    </view>
-  </div>
-  <view class='functionTab' style="margin-top:40rpx">
-    <button bindtap="planList">计划列表</button>
   </view>
-  <view class='functionTab'  style="margin-top:40rpx">
-    <button bindtap="addPlan">创建计划</button>
+  <view class="subtitle">
+    <image src="/images/iconfront3.png" mode="aspectFit" />
+    <view class="demo__icon zan-badge">
+      <text class="sub_t">计划列表</text>
+      <view bindtap="planList" class="arrow"></view>
+      <view class="item-wrapper">
+        <view wx:if="{{planList.length == 0}}">
+          <view class="txtitem">
+            <text>暂无计划</text>
+          </view>
+        </view>
+        <view class="planList" wx:for="{{planList}}" wx:key="{{index}}">
+          <navigator url="../showPlan/showPlan?planid={{item._id}}&tag={{tag}}">
+            <text>出发地点：{{item.region[0]}}，{{item.region[1]}}，{{item.region[2]}}
+            </text>
+            <text>出发日期：{{item.year}}-{{item.month}}-{{item.day}}
+            </text>
+            <text>发起人：{{item._openid}}
+            </text>
+            </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="subtitle">
+    <image src="/images/btn_add.png" />
+    <view class="demo__icon zan-badge">
+      <button bindtap="addPlan" class="sub_t" style="font-size: 32rpx">创建自己的计划</button>
+    </view>
   </view>
 </view>
